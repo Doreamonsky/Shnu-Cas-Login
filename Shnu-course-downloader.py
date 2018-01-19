@@ -19,13 +19,9 @@ for i in range(1,1166):
     url_opner = urllib2.build_opener()
     response = url_opner.open(course_url,urllib.urlencode(value))
 
-
     webText = response.read()
 
-
-
     web_soup = BeautifulSoup(webText, 'lxml')
-
 
 
     match_pattern = re.compile("'(\d+)']='(.*)';")
@@ -35,13 +31,7 @@ for i in range(1,1166):
     for group in re.findall(match_pattern,webText):
         time_table[str(group[0])] = str(group[1])
 
-    #print time_table
-
     data_list = []
-
-
-
-
 
     file_object = open('data/course_page{0}.txt'.format(i), 'w')
 
@@ -49,11 +39,6 @@ for i in range(1,1166):
         if idx != 0:
             tds = tr.find_all('td')
             if len(tds)>0:
-                # print tds[1].text
-                # print tds[2].text
-                # print tds[3].text
-                # print tds[4].text
-                # print time_table[str(tds[0].input['value'])]
                 class_and_teacher = "no place"
                 class_id = str(tds[0].input['value'])
 
@@ -63,7 +48,17 @@ for i in range(1,1166):
                     else:
                         class_and_teacher = "no place"
 
-                data = "{0},{1},{2},{3},{4} \n".format(resatisfy(tds[1].text),resatisfy(tds[2].text),resatisfy(tds[3].text),resatisfy(tds[4].text),class_and_teacher)
+                data = "{0},{1},{2},{3},{4}，{5},{6},{7},{8},{9},{10} \n".format(resatisfy(tds[1].text),
+                                                       resatisfy(tds[2].text),
+                                                       resatisfy(tds[3].text),
+                                                       resatisfy(tds[4].text),
+                                                       resatisfy(tds[5].text),
+                                                       resatisfy(tds[6].text),
+                                                       resatisfy(tds[7].text),
+                                                       resatisfy(tds[8].text),
+                                                       resatisfy(tds[9].text),
+                                                       resatisfy(tds[10].text),
+                                                       class_and_teacher)
                 file_object.write(data)
 
     file_object.close()
