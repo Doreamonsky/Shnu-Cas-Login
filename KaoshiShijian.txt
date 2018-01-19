@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="pragma" content="no-cache"/>
+  <meta http-equiv="cache-control" content="no-cache"/>
+  <meta http-equiv="expires" content="0"/>
+  <meta http-equiv="content-style-type" content="text/css"/>
+  <meta http-equiv="content-script-type" content="text/javascript"/>
+  <script>
+      window.$BG_LANG='zh';
+  </script>
+  <script type="text/javascript" src="/eams/static/scripts/jquery/jquery,jquery.ui.core.js?bg=3.4.3"></script>
+  <script type="text/javascript" src="/eams/static/scripts/plugins/jquery-form,jquery-history,jquery-colorbox,jquery-chosen.js?bg=3.4.3"></script>
+  <script type="text/javascript" src="/eams/static/js/plugins/jquery.subscribe,/js/struts2/jquery.struts2,jquery.ui.struts2.js?bg=3.4.3"></script>
+  <script type="text/javascript" src="/eams/static/scripts/beangle/beangle,beangle-ui.js?bg=3.4.3"></script>
+
+  <script type="text/javascript">var App = {contextPath:"/eams"};jQuery(document).ready(function () {jQuery.struts2_jquery.version="3.6.1";beangle.contextPath=App.contextPath;jQuery.scriptPath = App.contextPath+"/static/";jQuery.struts2_jquerySuffix = "";jQuery.ajaxSettings.traditional = true;jQuery.ajaxSetup ({cache: false});});</script>
+  <script type="text/javascript" src="/eams/static/scripts/my97/WdatePicker-4.72.js?compress=no"></script>
+  <script type="text/javascript" src="/eams/static/scripts/highcharts.js"></script>
+ 
+  <link id="jquery_theme_link" rel="stylesheet" href="/eams/static/themes/smoothness/jquery-ui.css?s2j=3.6.1" type="text/css"/>
+  <link id="beangle_theme_link" href="/eams/static/themes/default/beangle-ui,colorbox,chosen.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="/eams/static/css/foundation.css" type="text/css"/>
+
+	<script src="/eams/static/scripts/require.config.js?v=3"></script>
+	<script>
+	require.baseUrl="/eams/static/scripts";
+	</script>
+	<script src="/eams/static/scripts/require.js"></script>
+	<script type="text/javascript" src="/eams/static/scripts/require.js"></script>
+	
+	<!-- backbone & underscore -- fontend MVC framework -->
+	<script type="text/javascript" src="/eams/static/scripts/underscore.min.js"></script>
+	<script type="text/javascript" src="/eams/static/scripts/backbone.min.js"></script>
+	<script type="text/javascript" src="/eams/static/scripts/underscore.string.min.js"></script>
+	<script>
+	require(['underscore.string'], function(_s) {
+	        _.str = _s;
+	        _.mixin(_.str.exports());
+	});
+	</script>
+	
+
+</head>
+<body>
+
+ 
+<div class="grid">
+
+
+<table id="grid2056112801" class="gridtable">
+<thead class="gridhead">
+
+
+<tr>
+<th  width="10%" >课程序号</th>
+<th  width="23%" >课程名称</th>
+<th  width="8%" >考试类别</th>
+<th  width="11%" >考试日期</th>
+<th  width="13%" >考试安排</th>
+<th  width="8%" >考试地点</th>
+<th  width="8%" >考场座位号</th>
+<th  width="8%" >考试情况</th>
+<th  width="8%" >其它说明</th>
+</tr>
+
+</thead>
+
+<tbody id="grid2056112801_data"><tr><td>001031100091.01</td><td>高等数学</td><td>期末考试</td>		<td>2018-01-11</td>
+		<td>08:30~10:30</td>
+		<td><a href="/eams/stdExamTable!downloadExamroomSeat.action?examRoom.id=3683" target="_blank">奉贤4教楼A519</a></td>
+<td></td><td>正常</td>		<td></td>
+</tr><tr><td>001031100131.05</td><td>中国近现代史纲要			 <sup style="color:#333fff;">思政类课</sup>
+</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">地点未安排</font></td>
+<td></td><td>正常</td>		<td></td>
+</tr><tr><td>001031100541.13</td><td>通用学术英语1级</td><td>期末考试</td>		<td>2018-01-10</td>
+		<td>08:30~10:30</td>
+		<td><a href="/eams/stdExamTable!downloadExamroomSeat.action?examRoom.id=3114" target="_blank">奉贤4教楼A119</a></td>
+<td></td><td>正常</td>		<td></td>
+</tr><tr><td>001031100601.09</td><td>马克思主义基本原理			 <sup style="color:#333fff;">思政类课</sup>
+</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">地点未安排</font></td>
+<td></td><td>正常</td>		<td></td>
+</tr><tr><td>001031100621.05</td><td>思想道德修养与法律基础			 <sup style="color:#333fff;">思政类课</sup>
+</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">地点未安排</font></td>
+<td></td><td>正常</td>		<td></td>
+</tr><tr><td>001031100881.A0</td><td>体育1			 <sup style="color:#333fff;">排球</sup>
+</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">地点未安排</font></td>
+<td></td><td>正常</td>		<td></td>
+</tr><tr><td>001031101441.01</td><td>程序设计与VBA应用			 <sup style="color:#333fff;">计算机应用基础</sup>
+</td><td>期末考试</td>		<td>2018-01-08</td>
+		<td>10:00~11:00</td>
+		<td><a href="/eams/stdExamTable!downloadExamroomSeat.action?examRoom.id=2698" target="_blank">奉贤5教楼D207</a></td>
+<td></td><td>正常</td>		<td></td>
+</tr><tr><td>001031101671.08</td><td>形势与政策（理论）</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">地点未安排</font></td>
+<td></td><td>正常</td>		<td></td>
+</tr><tr><td>002031105631.02</td><td>趣味植物与常见植物</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">地点未安排</font></td>
+<td></td><td>正常</td>		<td></td>
+</tr><tr><td>120131100691.02</td><td>土木工程制图与CAD</td><td>期末考试</td>		<td>2018-01-15</td>
+		<td>08:30~10:30</td>
+		<td><a href="/eams/stdExamTable!downloadExamroomSeat.action?examRoom.id=3937" target="_blank">奉贤2教楼202B</a></td>
+<td></td><td>正常</td>		<td></td>
+</tr><tr><td>120131100921.02</td><td>土木工程CAD上机</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">地点未安排</font></td>
+<td></td><td>正常</td>		<td></td>
+</tr><tr><td>120131101381.01</td><td>建筑力学实验</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">地点未安排</font></td>
+<td></td><td>正常</td>		<td></td>
+</tr><tr><td>120131101401.01</td><td>建筑力学</td><td>期末考试</td>		<td>2018-01-11</td>
+		<td>13:30~15:30</td>
+		<td><a href="/eams/stdExamTable!downloadExamroomSeat.action?examRoom.id=3921" target="_blank">奉贤2教楼202B</a></td>
+<td></td><td>正常</td>		<td></td>
+</tr><tr><td>120131101491.01</td><td>工程管理概论</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">地点未安排</font></td>
+<td></td><td>正常</td>		<td></td>
+</tr><tr><td>120131102441.01</td><td>工程管理概论课程实习</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">时间未安排</font></td>
+		<td><font color="BBC4C3">地点未安排</font></td>
+<td></td><td>正常</td>		<td></td>
+</tr></tbody>
+</table>
+</div>
+<script type="text/javascript">
+  var clearCheckbox_grid2056112801 = function() {
+    jQuery("#grid2056112801").find(".box:checkbox").removeProp("checked");
+    jQuery("#grid2056112801").find(".gridselect-top :checkbox").removeProp("checked");
+    return true;
+  }
+  
+  page_grid2056112801 = bg.page("/eams/stdExamTable!examTable.action","");
+  {
+    var _paramstring = 'examBatch.id=201';
+    var _params = _paramstring.split('&');
+    for (var i = 0; i < _params.length; i++) {
+      _params[i] = decodeURIComponent(_params[i]);
+    }
+    _paramstring = _params.join('&');
+    page_grid2056112801.target("",'grid2056112801').action("/eams/stdExamTable!examTable.action").addParams(_paramstring).orderBy("null");
+  }
+  bg.ui.grid.init('grid2056112801',page_grid2056112801);
+</script>
+</body>
+</html>
