@@ -3,9 +3,18 @@
 
 import csv
 import re
+import os
+import json
 
+from prettytable import PrettyTable
+import prettytable
+
+folder = 'semester201702'
+
+
+# 课程教室地点数据
 class CoursePlace:
-    def __init__(self,teacher,week,time,week_duration,place):
+    def __init__(self, teacher, week, time, week_duration, place):
         self.teacher = teacher
         self.week = week
         self.time = time
@@ -13,9 +22,10 @@ class CoursePlace:
         self.place = place
 
 
-
+# 课程数据
 class Course:
-    def __init__(self, c_id, c_name,c_type,c_class,c_teacher,c_a_number,c_m_number, c_score,c_all_duration,c_week_duration,c_places):
+    def __init__(self, c_id, c_name, c_type, c_class, c_teacher, c_a_number, c_m_number, c_score, c_all_duration,
+                 c_week_duration, c_places):
         self.id = c_id
         self.name = c_name
         self.type = c_type
@@ -29,13 +39,13 @@ class Course:
         self.places = c_places
 
 
-
+# 课程获取
 class CourseHelper:
     def __init__(self):
         print "Init Course system"
 
-    def get_page_courses(self,page_id):
-        csv_reader = csv.reader(file('data/course_page{0}.txt'.format(page_id)),delimiter=';')
+    def get_page_courses(self, page_id):
+        csv_reader = csv.reader(file('data/{0}/course_page{1}.txt'.format(folder, page_id)), delimiter=';')
         my_course_list = []
 
         for line in csv_reader:
@@ -58,30 +68,120 @@ class CourseHelper:
 
     def get_all_page_courses(self):
         all_course_list = []
-        for i in range(1,1167):
+
+        i = 1
+
+        while os.path.exists('data/{0}/course_page{1}.txt'.format(folder, i)):
             all_course_list += self.get_page_courses(i)
+            i +=1
 
         return all_course_list
 
+    def get_course_place(self, place_str):  # 毛红娟 星期一 8-9 [1-16]  奉贤4教楼A219  <br>王敏 星期二 1-2 [1-16]  奉贤4教楼A311
 
-    def get_course_place(self,place_str):    #毛红娟 星期一 8-9 [1-16]  奉贤4教楼A219  <br>王敏 星期二 1-2 [1-16]  奉贤4教楼A311
-
-        place_str = place_str.replace('<br>','|') #防止干扰正则
+        place_str = place_str.replace('<br>', '')  # 防止干扰正则
 
         course_place_list = []
 
-        place_pattern = re.compile("(\S+)\s(\S+)\s(\d)\-(\d)\s\[(\d+)\-(\d+)\]\s+(\S+)") #\S+ 匹配非空字符 \s+ 空字符
+        place_pattern = re.compile("(\S+)\s+(\S+)\s+(\d+)\-(\d+)\s\[(\d+)\-(\d+)\]\s+(\S+)")  # \S+ 匹配非空字符 \s+ 空字符
 
         for group in place_pattern.findall(place_str):
             my_place = CoursePlace(
                 group[0],
                 group[1],
-                "{0}-{1}".format(group[2],group[3]),
-                "{0}-{1}".format(group[4],group[5]),
+                "{0}-{1}".format(group[2], group[3]),
+                "{0}-{1}".format(group[4], group[5]),
                 group[6]
             )
 
             course_place_list.append(my_place)
 
         return course_place_list
+
+
+# 课程表生成
+class CourseUtility:
+    def condition_keys(self, str_to_check, key_words):
+        valid = True
+
+        for key_world in key_words:
+            if key_world not in str_to_check:
+                valid = False
+
+        return valid
+
+
+class CourseTable:
+
+    def covert_class_time(self, time):
+        start = time.split('-')[0]
+        end = time.split('-')[1]
+        return range(int(start), int(end) + 1, 1)
+
+    def convert_week(self, week):
+        if week == '星期一':
+            return 'Mon'
+        elif week == '星期二':
+            return 'Tue'
+        elif week == '星期三':
+            return 'Wed'
+        elif week == '星期四':
+            return 'Thus'
+        elif week == '星期五':
+            return 'Fri'
+
+    # t 存[课程，地点】
+    ct_data = {
+        'Mon': ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 't13', 't14', 't15'],
+        'Tue': ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 't13', 't14', 't15'],
+        'Wed': ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 't13', 't14', 't15'],
+        'Thus': ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 't13', 't14', 't15'],
+        'Fri': ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 't13', 't14', 't15']
+    }
+
+    # 输出数据
+    ct_out = {
+        'Mon': ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 't13', 't14', 't15'],
+        'Tue': ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 't13', 't14', 't15'],
+        'Wed': ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 't13', 't14', 't15'],
+        'Thus': ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 't13', 't14', 't15'],
+        'Fri': ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 't13', 't14', 't15']
+    }
+
+    # 将课程数据暂存在ct中
+    def __init__(self, course_list):
+        for my_course in course_list:
+            for my_place in my_course.places:
+                time_occupied_by_class = self.covert_class_time(my_place.time)
+
+                for i in time_occupied_by_class:
+                    self.ct_data[self.convert_week(my_place.week)][i] = [my_course, my_place]
+
+    def echo_chart(self):
+        table = PrettyTable()
+
+        table.add_column('time', ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'])
+
+        table.hrules = prettytable.ALL
+
+        for week, time_array in self.ct_data.items():
+
+            for index in range(0, len(time_array)):
+                if 't' not in time_array[index]:
+                    item = time_array[index]
+                    print item[0].name
+                    self.ct_out[week][index] = '课程:{0} \n 教室:{1} \n 教师: {2}'.format(item[0].name, item[1].place, item[1].teacher)
+
+        for t in ["Mon", "Tue", "Wed", "Thus", "Fri"]:
+            table.add_column(t, self.ct_out[t])
+
+        print table.get_string()
+
+
+
+    def echo_json(self):
+        json_str = json.dumps(self.ct_data, default=lambda o: o.__dict__, sort_keys=True, indent=4)
+        print json_str
+
+
 
