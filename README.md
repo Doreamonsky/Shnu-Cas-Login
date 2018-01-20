@@ -34,7 +34,7 @@ Cookie JSESSIONID 可能是用于获取js的，反正只要在上师大域名下
 
 通过关键词，查询班级后，找到班级课程表。 
 
->Usage: Python Shnu_course_table.py -k <keyword> -t <type> json or table
+>Usage: Python Shnu_course_table.py -k \<keyword> -t \<type[json or table]> 
 
 
 
