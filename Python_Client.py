@@ -10,6 +10,6 @@ para = {'json':json.dumps({'request':'courses_by_keywords','keywords':'2017,х╖еч
 
 print urllib.urlencode(para)
 
-respond = opener.open('http://localhost:8080/?{0}'.format(urllib.urlencode(para)))
+respond = opener.open('http://waroftanks.cn:8080/?{0}'.format(urllib.urlencode(para)))
 
 print respond.read()

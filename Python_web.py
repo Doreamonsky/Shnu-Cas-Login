@@ -19,7 +19,7 @@ class SETHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
             client_data = json.loads(client_json)
 
             if client_data['request'] == 'courses_by_keywords':
-                shell_command = 'Python Shnu_course_table.py -k {0} -t json -s'.format(client_data['keywords'].encode('utf-8'))
+                shell_command = 'python Shnu_course_table.py -k {0} -t json -s'.format(client_data['keywords'].encode('utf-8'))
 
         p = os.popen(shell_command)
 
