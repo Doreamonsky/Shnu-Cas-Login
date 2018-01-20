@@ -169,7 +169,6 @@ class CourseTable:
             for index in range(0, len(time_array)):
                 if 't' not in time_array[index]:
                     item = time_array[index]
-                    print item[0].name
                     self.ct_out[week][index] = '课程:{0} \n 教室:{1} \n 教师: {2}'.format(item[0].name, item[1].place, item[1].teacher)
 
         for t in ["Mon", "Tue", "Wed", "Thus", "Fri"]:
