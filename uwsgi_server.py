@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
+
+#uwsgi --http :9000 --wsgi-file uwsgi_server.py 启动方式
+#/root/Shnu-course-server
+
 import web
 import urlparse
 import json
