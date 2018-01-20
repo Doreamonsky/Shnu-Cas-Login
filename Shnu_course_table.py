@@ -6,25 +6,28 @@ import sys, getopt
 
 def main(argv):
     try:
-        opts, args = getopt.getopt(argv, "hk:t:", ["keyword=", "type="])
+        opts, args = getopt.getopt(argv, "hsk:t:", ["keyword=", "type="])
     except getopt.GetoptError:
-        print 'Shnu_course_table.py -k <keyword> -t <type> json or table'
+        print 'Shnu_course_table.py -k <keyword> -t <type> json or table -s'
         exit()
 
-    isJson = False
+    is_json = False
+    is_sever = False
 
-    keyworks_input = []
+    keywords_input = []
 
     for opt, arg in opts:
         if opt == '-h':
-            print 'Shnu_course_table.py -k <keyword> -t <type> json or table'
+            print 'Shnu_course_table.py -k <keyword> -t <type> json or table -s'
             exit()
+        elif opt == "-s":
+            is_sever = True
         elif opt in ("-k", "--keyword"):
-            keyworks_input = arg.split(',')
+            keywords_input = arg.split(',')
         elif opt in ("-t", "--type"):
-            isJson = arg == 'json'
+            is_json = arg == 'json'
 
-    if len(keyworks_input) <= 0:
+    if len(keywords_input) <= 0:
         print 'Usage: Python Shnu_course_table.py -k <keyword> -t <type> json or table'
         exit()
 
@@ -35,14 +38,15 @@ def main(argv):
     course_list = []
 
     for course in course_helper.get_all_page_courses():
-        if course_utility.condition_keys(course.for_class, keyworks_input):
+        if course_utility.condition_keys(course.for_class, keywords_input):
             course_list.append(course)
 
-            print course.for_class
+            if not is_sever:
+                print course.for_class
 
     my_course_table = Shnu_course.CourseTable(course_list)
 
-    if isJson:
+    if is_json:
         my_course_table.echo_json()
     else:
         my_course_table.echo_chart()

@@ -42,7 +42,7 @@ class Course:
 # 课程获取
 class CourseHelper:
     def __init__(self):
-        print "Init Course system"
+        self.started = True
 
     def get_page_courses(self, page_id):
         csv_reader = csv.reader(file('data/{0}/course_page{1}.txt'.format(folder, page_id)), delimiter=';')
@@ -73,7 +73,7 @@ class CourseHelper:
 
         while os.path.exists('data/{0}/course_page{1}.txt'.format(folder, i)):
             all_course_list += self.get_page_courses(i)
-            i +=1
+            i += 1
 
         return all_course_list
 
@@ -169,18 +169,14 @@ class CourseTable:
             for index in range(0, len(time_array)):
                 if 't' not in time_array[index]:
                     item = time_array[index]
-                    self.ct_out[week][index] = '课程:{0} \n 教室:{1} \n 教师: {2}'.format(item[0].name, item[1].place, item[1].teacher)
+                    self.ct_out[week][index] = '课程:{0} \n 教室:{1} \n 教师: {2}'.format(item[0].name, item[1].place,
+                                                                                    item[1].teacher)
 
         for t in ["Mon", "Tue", "Wed", "Thus", "Fri"]:
             table.add_column(t, self.ct_out[t])
 
         print table.get_string()
 
-
-
     def echo_json(self):
         json_str = json.dumps(self.ct_data, default=lambda o: o.__dict__, sort_keys=True, indent=4)
         print json_str
-
-
-
