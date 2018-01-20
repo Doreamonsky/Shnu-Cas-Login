@@ -7,11 +7,12 @@ from bs4 import BeautifulSoup
 
 def resatisfy(myStr):
     newStr = myStr.replace('\n','')
+    newStr = newStr.replace(',','<br>')
     newStr = newStr.encode('utf-8')
     return newStr
 
 course_url = "http://course.shnu.edu.cn/eams/stdSyllabus!search.action"
-for i in range(1,1166):
+for i in range(1,1167):
     print i
 
     value = {"pageNo":i}
@@ -48,7 +49,7 @@ for i in range(1,1166):
                     else:
                         class_and_teacher = "no place"
 
-                data = "{0},{1},{2},{3},{4}，{5},{6},{7},{8},{9},{10} \n".format(resatisfy(tds[1].text),
+                data = "{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10} \n".format(resatisfy(tds[1].text),
                                                        resatisfy(tds[2].text),
                                                        resatisfy(tds[3].text),
                                                        resatisfy(tds[4].text),
