@@ -27,7 +27,7 @@ class SETHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
 
         self.send_response(200)
 
-        self.send_header("Welcome", "Contect")
+        self.send_header("server", "T Engine 假装自己很牛逼")
 
         self.end_headers()
 
