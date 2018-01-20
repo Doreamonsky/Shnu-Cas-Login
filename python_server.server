@@ -6,7 +6,7 @@ After=rc-local.service
 Type=simple
 User=root
 Group=root
-WorkingDirectory=/home
+WorkingDirectory=/root
 ExecStart=/root/Shnu-course-server/python Python_web.py
 Restart=always
 
