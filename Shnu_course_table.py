@@ -34,6 +34,7 @@ def main(argv):
         print 'Usage: Python Shnu_course_table.py -k <keyword> -t <type> json or table'
         exit()
 
+
     course_helper = Shnu_course.CourseHelper()
 
     course_utility = Shnu_course.CourseUtility()

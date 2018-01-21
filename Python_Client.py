@@ -12,4 +12,5 @@ print urllib.urlencode(para)
 
 respond = opener.open('https://waroftanks.cn/py/?{0}'.format(urllib.urlencode(para)))
 
-print respond.read()
+print 'https://waroftanks.cn/py/?{0}'.format(urllib.urlencode(para))
+#print respond.read()

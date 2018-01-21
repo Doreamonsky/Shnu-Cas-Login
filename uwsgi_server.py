@@ -26,12 +26,11 @@ class myweb:
             client_data = json.loads(client_json)
 
             if client_data['request'] == 'courses_by_keywords':
-                shell_command = 'python Shnu_course_table.py -k {0} -t json -s'.format(
-                    client_data['keywords'].encode('utf-8'))
+                shell_command = 'python Shnu_course_table.py -k {0} -t json -s'.format(client_data['keywords'].encode('utf-8'))
 
         p = os.popen(shell_command)
 
-        return p.read()
+        return p.read() + client_data['keywords'] + client_data['keywords'].encode('uft-8')
 
 
 application = app.wsgifunc()
