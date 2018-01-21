@@ -2,19 +2,21 @@
 # -*- coding: UTF-8 -*-
 import Shnu_course
 import sys, getopt
+import json
 
 
 def main(argv):
     try:
         opts, args = getopt.getopt(argv, "hsk:t:", ["keyword=", "type="])
     except getopt.GetoptError:
-        print 'Shnu_course_table.py -k <keyword> -t <type> json or table -s'
+        print 'getopt.GetoptError'
         exit()
 
     is_json = False
     is_sever = False
 
     keywords_input = []
+    keywords_data = ''
 
     for opt, arg in opts:
         if opt == '-h':
@@ -23,9 +25,14 @@ def main(argv):
         elif opt == "-s":
             is_sever = True
         elif opt in ("-k", "--keyword"):
-            keywords_input = arg.split(',')
+            keywords_data = arg
         elif opt in ("-t", "--type"):
             is_json = arg == 'json'
+
+    if is_sever:
+        keywords_input = json.loads(keywords_data)
+    else:
+        keywords_input = keywords_data.split(',')
 
     if len(keywords_input) <= 0:
         print 'Usage: Python Shnu_course_table.py -k <keyword> -t <type> json or table'
