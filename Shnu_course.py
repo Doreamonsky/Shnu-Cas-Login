@@ -116,7 +116,7 @@ class CourseTable:
     def covert_class_time(self, time):
         start = time.split('-')[0]
         end = time.split('-')[1]
-        return range(int(start), int(end) + 1, 1)
+        return range(int(start)-1, int(end) , 1) # 对齐课表
 
     def convert_week(self, week):
         if week == '星期一':

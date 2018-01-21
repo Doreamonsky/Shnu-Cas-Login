@@ -1,11 +1,13 @@
 #!/usr/bin/env python
-# -*- coding:utf-8 -*-
-
+# encoding=utf8
 
 import web
 import urlparse
 import json
 import os
+import urllib
+import sys
+
 
 urls = (
     '/(.*)', 'myweb'
@@ -16,13 +18,27 @@ app = web.application(urls, globals())
 
 class myweb:
     def GET(self, name):
+        reload(sys)
+
+        sys.setdefaultencoding('utf8')
+
         full_path = web.ctx.fullpath
+
+        raw = urllib.unquote(full_path).encode('raw_unicode_escape')
+
+        unicode_str = raw.decode()
+
         shell_command = 'ls'
 
         if '?' in full_path:
-            query_string = urlparse.unquote(full_path.split('?', 1)[1])
+            query_string = urlparse.unquote(unicode_str.split('?', 1)[1])
+
             params = urlparse.parse_qs(query_string)
+
             client_json = params['json'][0]
+
+            print client_json.encode('utf-8')
+
             client_data = json.loads(client_json)
 
             if client_data['request'] == 'courses_by_keywords':
@@ -30,7 +46,9 @@ class myweb:
 
         p = os.popen(shell_command)
 
-        return p.read() + client_data['keywords']
+
+
+        return p.read()
 
 
 application = app.wsgifunc()
