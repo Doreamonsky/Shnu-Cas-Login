@@ -30,7 +30,7 @@ class myweb:
 
         p = os.popen(shell_command)
 
-        return p.read() + client_data['keywords'] + client_data['keywords'].encode('uft-8')
+        return p.read() + client_data['keywords']
 
 
 application = app.wsgifunc()
