@@ -25,14 +25,10 @@ def main(argv):
         elif opt == "-s":
             is_sever = True
         elif opt in ("-k", "--keyword"):
-            keywords_data = arg
+            keywords_input = arg.split(',')
         elif opt in ("-t", "--type"):
             is_json = arg == 'json'
 
-    if is_sever:
-        keywords_input = json.loads(keywords_data)
-    else:
-        keywords_input = keywords_data.split(',')
 
     if len(keywords_input) <= 0:
         print 'Usage: Python Shnu_course_table.py -k <keyword> -t <type> json or table'
