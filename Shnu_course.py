@@ -14,12 +14,12 @@ folder = 'semester201702'
 
 # 课程教室地点数据
 class CoursePlace:
-    def __init__(self, teacher, week, time, week_duration, place):
-        self.teacher = teacher
-        self.week = week
-        self.time = time
-        self.week_duration = week_duration
-        self.place = place
+    def __init__(self, data):
+        self.teacher = data[0]
+        self.week = data[1]
+        self.time = data[2]
+        self.week_duration = data[3]
+        self.place = data[4]
 
 
 # 课程数据
@@ -83,15 +83,13 @@ class CourseHelper:
 
         course_place_list = []
 
-        place_pattern = re.compile("(\S+)\s+(\S+)\s+(\d+)\-(\d+)\s\[(\d+)\-(\d+)\]\s+(\S+)")  # \S+ 匹配非空字符 \s+ 空字符
+        # 每周都有的课程
+        place_pattern = re.compile(
+            "(\S+)\s+(星期\S+)\s+(\d+\-\d+)\s+(\S+)\s+(\S+)")  # \S+ 匹配非空字符 \s+ 空字符
 
         for group in place_pattern.findall(place_str):
             my_place = CoursePlace(
-                group[0],
-                group[1],
-                "{0}-{1}".format(group[2], group[3]),
-                "{0}-{1}".format(group[4], group[5]),
-                group[6]
+                group
             )
 
             course_place_list.append(my_place)
@@ -116,7 +114,7 @@ class CourseTable:
     def covert_class_time(self, time):
         start = time.split('-')[0]
         end = time.split('-')[1]
-        return range(int(start)-1, int(end) , 1) # 对齐课表
+        return range(int(start) - 1, int(end), 1)  # 对齐课表
 
     def convert_week(self, week):
         if week == '星期一':
@@ -169,8 +167,8 @@ class CourseTable:
             for index in range(0, len(time_array)):
                 if 't' not in time_array[index]:
                     item = time_array[index]
-                    self.ct_out[week][index] = '课程:{0} \n 教室:{1} \n 教师: {2}'.format(item[0].name, item[1].place,
-                                                                                    item[1].teacher)
+                    self.ct_out[week][index] = '课程:{0} \n 教室:{1} \n 教师: {2} \n 时间：{3}'.format(item[0].name, item[1].place,
+                                                                                    item[1].teacher,item[1].week_duration)
 
         for t in ["Mon", "Tue", "Wed", "Thus", "Fri"]:
             table.add_column(t, self.ct_out[t])
