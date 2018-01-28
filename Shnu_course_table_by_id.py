@@ -32,7 +32,7 @@ def main(argv):
 
     course_table = Shnu_course.CourseTable(course_list)
 
-    print course_table.echo_json()
+    course_table.echo_json()
 
 
 if __name__ == "__main__":

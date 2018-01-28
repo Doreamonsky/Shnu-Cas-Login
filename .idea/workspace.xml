@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14269222-1f8d-4859-8f46-5e84ff75b396" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Shnu_course_table_by_id.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Shnu_classroom.py" afterPath="$PROJECT_DIR$/Shnu_classroom.py" />
-      <change beforePath="$PROJECT_DIR$/Shnu_course.py" afterPath="$PROJECT_DIR$/Shnu_course.py" />
+      <change beforePath="$PROJECT_DIR$/Shnu_course_table_by_id.py" afterPath="$PROJECT_DIR$/Shnu_course_table_by_id.py" />
       <change beforePath="$PROJECT_DIR$/uwsgi_server.py" afterPath="$PROJECT_DIR$/uwsgi_server.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +26,8 @@
       <file leaf-file-name="Shnu_course_table.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Shnu_course_table.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="43" />
+            <state relative-caret-position="379">
+              <caret line="47" column="27" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="27" />
               <folding>
                 <element signature="e#42#60#0" expanded="true" />
               </folding>
@@ -40,9 +38,21 @@
       <file leaf-file-name="uwsgi_server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uwsgi_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="577">
-              <caret line="46" column="54" lean-forward="false" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="54" />
+            <state relative-caret-position="584">
+              <caret line="47" column="14" lean-forward="true" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Shnu_course.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Shnu_course.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="105" column="27" lean-forward="false" selection-start-line="105" selection-start-column="27" selection-end-line="105" selection-end-column="27" />
+              <folding>
+                <element signature="e#43#53#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,8 +60,8 @@
       <file leaf-file-name="Shnu_course_table_by_id.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Shnu_course_table_by_id.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="32" column="54" lean-forward="false" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+            <state relative-caret-position="424">
+              <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
               <folding>
                 <element signature="e#42#60#0" expanded="true" />
               </folding>
@@ -62,8 +72,8 @@
       <file leaf-file-name="Shnu_classroom.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Shnu_classroom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+            <state relative-caret-position="543">
+              <caret line="38" column="4" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
               <folding>
                 <element signature="e#42#60#0" expanded="true" />
               </folding>
@@ -83,8 +93,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>工程管理本科1班</find>
-      <find>2017工程管理本科1班</find>
       <find>工程管理</find>
       <find>ALL</find>
       <find>keys</find>
@@ -107,12 +115,14 @@
       <find>星期三 5-14 [1-5]单,[8-9],[11-16]  奉贤2教楼102</find>
       <find>time_occupied_by_class</find>
       <find>course_list</find>
-      <find>print</find>
       <find>徐汇</find>
       <find>file_object</find>
       <find>徐汇一教</find>
       <find>ct_data</find>
       <find>GetoptError</find>
+      <find>opt</find>
+      <find>is_sever</find>
+      <find>print</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -148,9 +158,9 @@
         <option value="$PROJECT_DIR$/Shnu_exporter.py" />
         <option value="$PROJECT_DIR$/data/classroom.txt" />
         <option value="$PROJECT_DIR$/Shnu_course.py" />
-        <option value="$PROJECT_DIR$/Shnu_course_table_by_id.py" />
         <option value="$PROJECT_DIR$/uwsgi_server.py" />
         <option value="$PROJECT_DIR$/Shnu_classroom.py" />
+        <option value="$PROJECT_DIR$/Shnu_course_table_by_id.py" />
       </list>
     </option>
   </component>
@@ -627,16 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Shnu_course.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="167" column="49" lean-forward="false" selection-start-line="167" selection-start-column="49" selection-end-line="167" selection-end-column="49" />
-          <folding>
-            <element signature="e#43#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Shnu_course_finder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -647,36 +647,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Shnu_course_table.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="27" column="32" lean-forward="true" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="43" />
+        <state relative-caret-position="379">
+          <caret line="47" column="27" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="27" />
           <folding>
             <element signature="e#42#60#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Shnu_classroom.py">
+    <entry file="file://$PROJECT_DIR$/Shnu_course.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+        <state relative-caret-position="221">
+          <caret line="105" column="27" lean-forward="false" selection-start-line="105" selection-start-column="27" selection-end-line="105" selection-end-column="27" />
           <folding>
-            <element signature="e#42#60#0" expanded="true" />
+            <element signature="e#43#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/uwsgi_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="46" column="54" lean-forward="false" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="54" />
+        <state relative-caret-position="584">
+          <caret line="47" column="14" lean-forward="true" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Shnu_classroom.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="38" column="4" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+          <folding>
+            <element signature="e#42#60#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Shnu_course_table_by_id.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="32" column="54" lean-forward="false" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+        <state relative-caret-position="424">
+          <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
           <folding>
             <element signature="e#42#60#0" expanded="true" />
           </folding>
