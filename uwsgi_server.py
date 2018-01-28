@@ -43,7 +43,8 @@ class myweb:
 
             if client_data['request'] == 'courses_by_keywords':
                 shell_command = 'python Shnu_course_table.py -k {0} -t json -s'.format(client_data['keywords'].encode('utf-8'))
-
+            if client_data['request'] == 'courses_by_classroom_keywords':
+                shell_command = 'python Shnu_classroom.py -k {0} -t json -s'.format(client_data['keywords'].encode('utf-8'))
         p = os.popen(shell_command)
 
 
