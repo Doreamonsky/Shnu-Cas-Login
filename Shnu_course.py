@@ -154,8 +154,9 @@ class CourseTable:
 
                 for i in time_occupied_by_class:
                     if 't' not in self.ct_data[self.convert_week(my_place.week)][i]:
-                        my_course.name = my_course.name + '[系统故障:课程冲突]'
-                    self.ct_data[self.convert_week(my_place.week)][i] = [my_course, my_place]
+                        self.ct_data[self.convert_week(my_place.week)][i].append([my_course, my_place])
+                    else:
+                        self.ct_data[self.convert_week(my_place.week)][i] = [[my_course, my_place]]
 
     def echo_chart(self):
         table = PrettyTable()
