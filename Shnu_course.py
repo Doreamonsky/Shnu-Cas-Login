@@ -170,6 +170,8 @@ class CourseTable:
                     self.ct_out[week][index] = '课程:{0} \n 教室:{1} \n 教师: {2} \n 时间：{3}'.format(item[0].name, item[1].place,
                                                                                     item[1].teacher,item[1].week_duration)
 
+
+
         for t in ["Mon", "Tue", "Wed", "Thus", "Fri"]:
             table.add_column(t, self.ct_out[t])
 

@@ -6,7 +6,7 @@ import sys, getopt
 
 def main(argv):
     try:
-        opts, args = getopt.getopt(argv, "hk:", ["keyword="])
+        opts, args = getopt.getopt(argv, "hsk:t:", ["keyword=", "type="])
     except getopt.GetoptError:
         print 'getopt.GetoptError'
         exit()
