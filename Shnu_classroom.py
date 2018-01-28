@@ -6,14 +6,14 @@ import sys, getopt
 
 def main(argv):
     try:
-        opts, args = getopt.getopt(argv, "hsk:t:", ["keyword=", "type="])
+        opts, args = getopt.getopt(argv, "hk:", ["keyword="])
     except getopt.GetoptError:
         print 'getopt.GetoptError'
         exit()
 
     for opt, arg in opts:
         if opt == '-h':
-            print 'Shnu_classroom.py -k <keyword> -t <type> json or table -s'
+            print 'Shnu_classroom.py -k <keyword> '
             exit()
         elif opt in ("-k", "--keyword"):
             keywords_input = arg.split(',')
