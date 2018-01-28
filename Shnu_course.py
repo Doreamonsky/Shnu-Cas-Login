@@ -153,6 +153,8 @@ class CourseTable:
                 time_occupied_by_class = self.covert_class_time(my_place.time)
 
                 for i in time_occupied_by_class:
+                    if 't' not in self.ct_data[self.convert_week(my_place.week)][i]:
+                        my_course.name = my_course.name + '[系统故障:课程冲突]'
                     self.ct_data[self.convert_week(my_place.week)][i] = [my_course, my_place]
 
     def echo_chart(self):
