@@ -103,11 +103,14 @@ class CourseUtility:
         valid = True
 
         for key_world in key_words:
-            if key_world in str_to_check:
-                if '^' in key_world:
+            # 过滤搜索
+            if '/' in key_world:
+                replaced_key_word = key_world.replace('/','')
+                if replaced_key_word in str_to_check:
                     valid = False
-            else:
-                if '^' not in key_world:
+            #正常搜索
+            else :
+                if key_world not in str_to_check:
                     valid = False
 
         return valid
