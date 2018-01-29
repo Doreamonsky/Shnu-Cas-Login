@@ -108,9 +108,9 @@ class CourseUtility:
                 replaced_key_word = key_world.replace('/', '')
                 if replaced_key_word in str_to_check:
                     valid = False
-            # 括号不允许 
+            # 括号不允许
             elif '?' in key_world:
-                if '(' in str_to_check:
+                if '(' in str_to_check or '（' in str_to_check:
                     valid = False
             # 正常搜索
             else:
