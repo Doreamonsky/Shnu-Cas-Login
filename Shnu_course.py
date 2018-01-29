@@ -157,10 +157,11 @@ class CourseTable:
                 time_occupied_by_class = self.covert_class_time(my_place.time)
 
                 for i in time_occupied_by_class:
-                    if 't' not in self.ct_data[self.convert_week(my_place.week)][i]:
-                        self.ct_data[self.convert_week(my_place.week)][i].append([my_course, my_place])
-                    else:
-                        self.ct_data[self.convert_week(my_place.week)][i] = [[my_course, my_place]]
+                    if self.ct_data.has_key(self.convert_week(my_place.week)):
+                        if 't' not in self.ct_data[self.convert_week(my_place.week)][i]:
+                            self.ct_data[self.convert_week(my_place.week)][i].append([my_course, my_place])
+                        else:
+                            self.ct_data[self.convert_week(my_place.week)][i] = [[my_course, my_place]]
 
     def echo_chart(self):
         # table = PrettyTable()
