@@ -29,11 +29,9 @@ def main(argv):
         elif opt in ("-t", "--type"):
             is_json = arg == 'json'
 
-
     if len(keywords_input) <= 0:
         print 'Usage: Python Shnu_course_table.py -k <keyword> -t <type> json or table'
         exit()
-
 
     course_helper = Shnu_course.CourseHelper()
 
@@ -42,7 +40,7 @@ def main(argv):
     course_list = []
 
     for course in course_helper.get_all_page_courses():
-        if course_utility.condition_keys(course.for_class, keywords_input):
+        if course_utility.condition_keys(course.for_class, keywords_input) and len(course_list) < 30:
             course_list.append(course)
 
             if not is_sever:
