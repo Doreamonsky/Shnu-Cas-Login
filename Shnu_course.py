@@ -105,11 +105,15 @@ class CourseUtility:
         for key_world in key_words:
             # 过滤搜索
             if '/' in key_world:
-                replaced_key_word = key_world.replace('/','')
+                replaced_key_word = key_world.replace('/', '')
                 if replaced_key_word in str_to_check:
                     valid = False
-            #正常搜索
-            else :
+            # 括号不允许
+            elif '?' in key_world:
+                if '(' in str_to_check:
+                    valid = False
+            # 正常搜索
+            else:
                 if key_world not in str_to_check:
                     valid = False
 
