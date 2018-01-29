@@ -103,8 +103,12 @@ class CourseUtility:
         valid = True
 
         for key_world in key_words:
-            if key_world not in str_to_check:
-                valid = False
+            if key_world in str_to_check:
+                if '^' in key_world:
+                    valid = False
+            else:
+                if '^' not in key_world:
+                    valid = False
 
         return valid
 
