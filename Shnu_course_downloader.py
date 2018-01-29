@@ -24,7 +24,7 @@ def resatisfy(myStr):
 # -H 'Cookie: semester.id=102; JSESSIONID=49A9D01DF22147DC0FBA5E43AF507F1B; UM_distinctid=15db6a68e559ec-02ca7b47fac51c-1d401925-232800-15db6a68e56927' \
 # -H 'X-Requested-With: XMLHttpRequest'
 
-course_url = "http://course.shnu.edu.cn/eams/stdSyllabus!search.action?lesson.project.id=1&lesson.semester.id=102"
+course_url = "http://course.shnu.edu.cn/eams/stdSyllabus!search.action?lesson.project.id=1&lesson.semester.id=142"
 
 url_opner = urllib2.build_opener()
 
@@ -62,7 +62,7 @@ for i in range(1,page_for_timer):
 
     data_list = []
 
-    file_object = open('data/semester201701/course_page{0}.txt'.format(i), 'w')
+    file_object = open('data/semester201702/course_page{0}.txt'.format(i), 'w')
 
     for idx, tr in enumerate(web_soup.find_all('tr')):
         if idx != 0:
@@ -77,7 +77,7 @@ for i in range(1,page_for_timer):
                     else:
                         class_and_teacher = "no place"
 
-                data = "{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10} \n".format(resatisfy(tds[1].text),
+                data = "{0}${1}${2}${3}${4}${5}${6}${7}${8}${9}${10} \n".format(resatisfy(tds[1].text),
                                                        resatisfy(tds[2].text),
                                                        resatisfy(tds[3].text),
                                                        resatisfy(tds[4].text),

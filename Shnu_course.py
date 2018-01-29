@@ -45,7 +45,7 @@ class CourseHelper:
         self.started = True
 
     def get_page_courses(self, page_id):
-        csv_reader = csv.reader(file('data/{0}/course_page{1}.txt'.format(folder, page_id)), delimiter=';')
+        csv_reader = csv.reader(file('data/{0}/course_page{1}.txt'.format(folder, page_id)), delimiter='$')
         my_course_list = []
 
         for line in csv_reader:
