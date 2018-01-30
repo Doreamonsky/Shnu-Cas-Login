@@ -109,7 +109,7 @@ class CourseUtility:
                 if replaced_key_word in str_to_check:
                     valid = False
             # 括号不允许
-            elif '?' in key_world:
+            elif '?' in key_world or '？' in key_world:
                 if '(' in str_to_check or '（' in str_to_check:
                     valid = False
             # 正常搜索
@@ -195,4 +195,4 @@ class CourseTable:
 
     def echo_json(self):
         json_str = json.dumps(self.ct_data, default=lambda o: o.__dict__, sort_keys=True, indent=4)
-        print json_str
+        return json_str

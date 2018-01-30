@@ -4,10 +4,9 @@
 import web
 import urlparse
 import json
-import os
 import urllib
 import sys
-
+import Function_adapter
 
 urls = (
     '/(.*)', 'myweb'
@@ -28,7 +27,7 @@ class myweb:
 
         unicode_str = raw.decode()
 
-        shell_command = 'ls'
+        call_back_data = '{No Function}'
 
         if '?' in full_path:
             query_string = urlparse.unquote(unicode_str.split('?', 1)[1])
@@ -41,18 +40,9 @@ class myweb:
 
             client_data = json.loads(client_json)
 
-            if client_data['request'] == 'courses_by_keywords':
-                shell_command = 'python Shnu_course_table.py -k {0} -t json -s'.format(client_data['keywords'].encode('utf-8'))
-            if client_data['request'] == 'courses_by_classroom_keywords':
-                shell_command = 'python Shnu_classroom.py -k {0}'.format(client_data['keywords'].encode('utf-8'))
-            if client_data['request'] == 'courses_by_id':
-                shell_command = 'python Shnu_course_table_by_id.py -k {0}'.format(client_data['keywords'].encode('utf-8'))
+            call_back_data = Function_adapter.run(client_data['request'], client_data['keywords'])
 
-        p = os.popen(shell_command)
-
-
-
-        return p.read()
+        return call_back_data.read()
 
 
 application = app.wsgifunc()
