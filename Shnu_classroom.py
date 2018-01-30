@@ -18,7 +18,7 @@ class ShnuClassroom:
 
         print keywords
         print len(course_list)
-        
+
         for course in course_helper.get_all_page_courses():
             for my_place in course.places:
                 if course_utility.condition_keys(my_place.place, keywords):
