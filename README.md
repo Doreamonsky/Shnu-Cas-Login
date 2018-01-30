@@ -33,12 +33,16 @@ Cookie JSESSIONID 可能是用于获取js的，反正只要在上师大域名下
 ## 请求参数
 |请求参数|请求内容|
 |-------|-------|
-json {'request':类型,'keywords':关键词}
+|json |{'request':类型,'keywords':关键词}|
 
 类型有： 
+
 courses_by_keywords 教学班课程 关键词用 , 分割 如2017,工程管理,1班
+
 courses_by_classroom_keywords 教室 最好一次只询问一个 
+
 注：运行 Shnu_exporter.py 来获得教学楼数据 进行本地保存
+
 courses_by_id 课程序号 用 , 分割 如11111.11,22222.22
 
 返回的统一为一张课程表的Json，需要自己进行单双周过滤与双，三，四连在一起的课程合并。
