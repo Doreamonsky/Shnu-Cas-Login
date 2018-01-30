@@ -48,6 +48,8 @@ class myweb:
             call_back_data = adapter.run(client_data['request'].encode('utf-8'),
                                          client_data['keywords'].encode('utf-8'))
 
+        del adapter
+
         return call_back_data
 
 
