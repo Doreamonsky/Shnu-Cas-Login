@@ -48,7 +48,7 @@ courses_by_id 课程序号 用 , 分割 如11111.11,22222.22
 返回的统一为一张课程表的Json，需要自己进行单双周过滤与双，三，四连在一起的课程合并。
 
 ## 我的服务器
-> 地址： https://waroftanks.cn/py/ 
+> 地址： https://waroftanks.cn/py/ 仅支持Get请求
 
 
 ## 课程表解析
