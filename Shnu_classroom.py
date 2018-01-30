@@ -15,9 +15,11 @@ def run(keywords_input):
     for course in course_helper.get_all_page_courses():
         for my_place in course.places:
             if course_utility.condition_keys(my_place.place, keywords):
-                replace_course = course
-                replace_course.places = [my_place]
-                course_list.append(replace_course)
+                course_list.append(Shnu_course.Course(
+                    course.id, course.name, course.type, course.for_class, course.teacher,
+                    course.actual_number, course.max_number, course.score, course.all_duration, course.week_duration,
+                    [my_place]
+                ))
 
     chart = Shnu_course.CourseTable(course_list)
 

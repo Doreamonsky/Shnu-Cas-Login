@@ -40,7 +40,7 @@ class myweb:
             print client_json.encode('utf-8')
 
             client_data = json.loads(client_json)
-            
+
             print client_data['keywords'].encode('utf-8')
 
             call_back_data = Function_adapter.run(client_data['request'].encode('utf-8'),
