@@ -41,7 +41,7 @@ class myweb:
 
             client_data = json.loads(client_json)
 
-            call_back_data = Function_adapter.run(client_data['request'], client_data['keywords'])
+            call_back_data = Function_adapter.run(client_data['request'].encode('utf-8'), client_data['keywords'].encode('utf-8'))
 
         return call_back_data
 
