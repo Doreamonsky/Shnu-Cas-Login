@@ -30,6 +30,8 @@ class myweb:
 
         call_back_data = '{No Function}'
 
+        adapter = Function_adapter.MyAdapter
+
         if '?' in full_path:
             query_string = urlparse.unquote(unicode_str.split('?', 1)[1])
 
@@ -43,7 +45,7 @@ class myweb:
 
             print client_data['keywords'].encode('utf-8')
 
-            call_back_data = Function_adapter.run(client_data['request'].encode('utf-8'),
+            call_back_data = adapter.run(client_data['request'].encode('utf-8'),
                                                   client_data['keywords'].encode('utf-8'))
 
         return call_back_data
