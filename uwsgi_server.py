@@ -4,6 +4,7 @@
 import web
 import urlparse
 import json
+import os
 import urllib
 import sys
 import Function_adapter
@@ -42,7 +43,7 @@ class myweb:
 
             call_back_data = Function_adapter.run(client_data['request'], client_data['keywords'])
 
-        return call_back_data.read()
+        return call_back_data
 
 
 application = app.wsgifunc()
