@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 import Shnu_course
 
+
 def run(keywords_input):
     course_id_list = keywords_input.split(',')
 
