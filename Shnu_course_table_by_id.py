@@ -7,7 +7,7 @@ def run(keywords_input):
     course_id_list = keywords_input.split(',')
 
     print course_id_list
-    
+
     course_list = []
 
     course_helper = Shnu_course.CourseHelper()

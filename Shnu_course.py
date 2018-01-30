@@ -171,26 +171,6 @@ class CourseTable:
                             self.ct_data[self.convert_week(my_place.week)][i] = [[my_course, my_place]]
 
     def echo_chart(self):
-        # table = PrettyTable()
-        #
-        # table.add_column('time', ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'])
-        #
-        # table.hrules = prettytable.ALL
-        #
-        # for week, time_array in self.ct_data.items():
-        #
-        #     for index in range(0, len(time_array)):
-        #         if 't' not in time_array[index]:
-        #             item = time_array[index]
-        #             self.ct_out[week][index] = '课程:{0} \n 教室:{1} \n 教师: {2} \n 时间：{3}'.format(item[0].name, item[1].place,
-        #                                                                             item[1].teacher,item[1].week_duration)
-        #
-        #
-        #
-        # for t in ["Mon", "Tue", "Wed", "Thus", "Fri"]:
-        #     table.add_column(t, self.ct_out[t])
-        #
-        # print table.get_string()
         print '业务调整，请到小程序得到Chart'
 
     def echo_json(self):
