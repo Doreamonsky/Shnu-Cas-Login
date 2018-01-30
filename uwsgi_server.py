@@ -30,7 +30,7 @@ class myweb:
 
         call_back_data = '{No Function}'
 
-        adapter = Function_adapter.MyAdapter
+        adapter = Function_adapter.MyAdapter()
 
         if '?' in full_path:
             query_string = urlparse.unquote(unicode_str.split('?', 1)[1])
