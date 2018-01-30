@@ -46,7 +46,7 @@ class myweb:
             print client_data['keywords'].encode('utf-8')
 
             call_back_data = adapter.run(client_data['request'].encode('utf-8'),
-                                                  client_data['keywords'].encode('utf-8'))
+                                         client_data['keywords'].encode('utf-8'))
 
         return call_back_data
 

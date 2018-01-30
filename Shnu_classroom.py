@@ -3,24 +3,29 @@
 import Shnu_course
 
 
-def run(keywords_input):
-    course_helper = Shnu_course.CourseHelper()
+class ShnuClassroom:
+    def __init__(self):
+        print 'ShnuClassroom'
 
-    course_utility = Shnu_course.CourseUtility()
+    def run(self, keywords_input):
+        course_helper = Shnu_course.CourseHelper()
 
-    course_list = []
+        course_utility = Shnu_course.CourseUtility()
 
-    keywords = [keywords_input]
+        course_list = []
 
-    for course in course_helper.get_all_page_courses():
-        for my_place in course.places:
-            if course_utility.condition_keys(my_place.place, keywords):
-                course_list.append(Shnu_course.Course(
-                    course.id, course.name, course.type, course.for_class, course.teacher,
-                    course.actual_number, course.max_number, course.score, course.all_duration, course.week_duration,
-                    [my_place]
-                ))
+        keywords = [keywords_input]
 
-    chart = Shnu_course.CourseTable(course_list)
+        for course in course_helper.get_all_page_courses():
+            for my_place in course.places:
+                if course_utility.condition_keys(my_place.place, keywords):
+                    course_list.append(Shnu_course.Course(
+                        course.id, course.name, course.type, course.for_class, course.teacher,
+                        course.actual_number, course.max_number, course.score, course.all_duration,
+                        course.week_duration,
+                        [my_place]
+                    ))
 
-    return chart.echo_json()
+        chart = Shnu_course.CourseTable(course_list)
+
+        return chart.echo_json()

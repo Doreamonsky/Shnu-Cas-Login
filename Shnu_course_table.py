@@ -3,19 +3,23 @@
 import Shnu_course
 
 
-def run(keywords_input):
-    keywords = keywords_input.split(',')
+class ShnuCourseTable:
+    def __init__(self):
+        print 'ShnuCourseTable'
 
-    course_helper = Shnu_course.CourseHelper()
+    def run(self, keywords_input):
+        keywords = keywords_input.split(',')
 
-    course_utility = Shnu_course.CourseUtility()
+        course_helper = Shnu_course.CourseHelper()
 
-    course_list = []
+        course_utility = Shnu_course.CourseUtility()
 
-    for course in course_helper.get_all_page_courses():
-        if course_utility.condition_keys(course.for_class, keywords) and len(course_list) < 30:
-            course_list.append(course)
+        course_list = []
 
-    my_course_table = Shnu_course.CourseTable(course_list)
+        for course in course_helper.get_all_page_courses():
+            if course_utility.condition_keys(course.for_class, keywords) and len(course_list) < 30:
+                course_list.append(course)
 
-    return my_course_table.echo_json()
+        my_course_table = Shnu_course.CourseTable(course_list)
+
+        return my_course_table.echo_json()
