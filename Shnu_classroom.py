@@ -10,7 +10,7 @@ def run(keywords_input):
 
     course_list = []
 
-    keywords = keywords_input
+    keywords = [keywords_input]
 
     for course in course_helper.get_all_page_courses():
         for my_place in course.places:
