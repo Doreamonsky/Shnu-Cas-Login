@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
 def run(module_type, keyword):
     if module_type == 'courses_by_keywords':
         import Shnu_course_table
