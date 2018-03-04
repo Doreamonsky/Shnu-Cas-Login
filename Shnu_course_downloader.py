@@ -11,6 +11,9 @@ from bs4 import BeautifulSoup
 
 
 def resatisfy(myStr):
+    if len(myStr) == 0:
+        myStr = 'Null-Data'
+
     newStr = myStr.replace('\n', '')
     newStr = newStr.replace(',', '<br>')
     newStr = newStr.encode('utf-8')
@@ -125,7 +128,7 @@ page_for_timer = int(int(content_length) / int(content_per_page))
 time.sleep(1)
 
 
-for i in range(1, page_for_timer):
+for i in range(44, 45):
     print i
 
 
