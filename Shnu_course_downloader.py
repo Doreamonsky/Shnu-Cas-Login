@@ -1,8 +1,11 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-import urllib
+
 import urllib2
+import urllib
+import cookielib
 import re
+
 from bs4 import BeautifulSoup
 
 def resatisfy(myStr):
@@ -12,25 +15,92 @@ def resatisfy(myStr):
     return newStr
 
 
-#curl 'http://course.shnu.edu.cn/eams/stdSyllabus!search.action?lesson.project.id=1&lesson.semester.id=102&_=1516424382052' \
-# -XGET \
-# -H 'Referer: http://course.shnu.edu.cn/eams/stdSyllabus!search.action?lesson.project.id=1&lesson.semester.id=102' \
+
+#
+# curl 'http://course.shnu.edu.cn/eams/stdSyllabus!search.action' \
+# -XPOST \
+# -H 'Referer: http://course.shnu.edu.cn/eams/stdSyllabus!search.action' \
+# -H 'Content-Type: application/x-www-form-urlencoded' \
+# -H 'Origin: http://course.shnu.edu.cn' \
 # -H 'Host: course.shnu.edu.cn' \
-# -H 'Accept: text/html, */*; q=0.01' \
+# -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' \
 # -H 'Connection: keep-alive' \
-# -H 'Accept-Language: en-us' \
+# -H 'Content-Length: 209' \
 # -H 'Accept-Encoding: gzip, deflate' \
 # -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/604.4.7 (KHTML, like Gecko) Version/11.0.2 Safari/604.4.7' \
-# -H 'Cookie: semester.id=102; JSESSIONID=49A9D01DF22147DC0FBA5E43AF507F1B; UM_distinctid=15db6a68e559ec-02ca7b47fac51c-1d401925-232800-15db6a68e56927' \
-# -H 'X-Requested-With: XMLHttpRequest'
+# -H 'Cookie: semester.id=142; JSESSIONID=E74542994AF02385D2B48B9E951C412D' \
+# -H 'Accept-Language: en-us' \
+# -H 'Upgrade-Insecure-Requests: 1' \
+# --data 'lesson.no=001031101671.02&lesson.course.name=&lesson.courseType.name=&lesson.teachClass.name=&teacher.name=&lesson.teachClass.stdCount=&lesson.teachClass.limitCount=&lesson.course.credits=&lesson.coursePeriod='
+
+
+#CAS Temporary
+homepage_url = 'http://cas.shnu.edu.cn/cas/login?service=http%3A%2F%2Fcourse.shnu.edu.cn%2Feams%2Flogin.action'
+login_url = "http://cas.shnu.edu.cn/cas/login;jsessionid={0}?service=http%3A%2F%2Fcourse.shnu.edu.cn%2Feams%2Flogin.action"
+
+username = raw_input("UserName")
+password = raw_input("Password")
+
+JSESSIONID = ''  # 打开cas后分配的
+
+# Cookies
+my_cookies = cookielib.CookieJar()
+cookie_pr = urllib2.HTTPCookieProcessor(my_cookies)
+url_opener = urllib2.build_opener(cookie_pr)
+
+# 访问Cas获得 JSESSIONID It 与 execution
+response = url_opener.open(homepage_url)
+
+for cookie in my_cookies:
+    if cookie.name == "JSESSIONID":
+        JSESSIONID = cookie.value
+
+web_text = response.read().decode('utf-8')
+
+matchpattern_lt = re.compile('LT-.*-cas')
+result = re.findall(matchpattern_lt, web_text)
+if result:
+    lt = result[0]
+else:
+    print "not match"
+
+matchpattern_ex = re.compile('e\ds\d')
+result = re.findall(matchpattern_ex, web_text)
+
+if result:
+    ex = result[0]
+else:
+    print "not match"
+
+login_url = login_url.format(JSESSIONID)
+
+values = {
+    '_eventId': 'submit',
+    'code': 'code',
+    'execution': ex,
+    'lt': lt,
+    'password': password,
+    'phoneCode': 'submit',
+    'type': 'submit',
+    'username': username,
+}
+
+data = urllib.urlencode(values)
+
+request = urllib2.Request(login_url, data)
+
+response = url_opener.open(request)
+
+for cookie in my_cookies:
+    print "Cookies: {0}:{1}".format(cookie.name, cookie.value)
+
+#Cas
 
 course_url = "http://course.shnu.edu.cn/eams/stdSyllabus!search.action?lesson.project.id=1&lesson.semester.id=142"
 
-url_opner = urllib2.build_opener()
-
 value = {"pageNo":1}
 
-response = url_opner.open(course_url, urllib.urlencode(value))
+response = url_opener.open(course_url, urllib.urlencode(value))
 
 webText = response.read()
 
@@ -46,7 +116,7 @@ for i in range(1,page_for_timer):
 
     value = {"pageNo":i}
 
-    response = url_opner.open(course_url,urllib.urlencode(value))
+    response = url_opener.open(course_url, urllib.urlencode(value))
 
     webText = response.read()
 
