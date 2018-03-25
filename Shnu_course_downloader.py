@@ -147,7 +147,13 @@ for i in range(1, page_for_timer):
     time_table = {}
 
     for group in re.findall(match_pattern, webText):
-        time_table[str(group[0])] = str(group[1])
+        course_detail = str(group[1])
+
+        if len(course_detail)>0:
+            if course_detail[0].isspace():
+                course_detail = "None-Teacher" + course_detail
+
+        time_table[str(group[0])] = course_detail
 
     data_list = []
 
@@ -158,6 +164,7 @@ for i in range(1, page_for_timer):
             tds = tr.find_all('td')
             if len(tds) > 0:
                 class_and_teacher = "no place"
+                
                 class_id = str(tds[0].input['value'])
 
                 if time_table.has_key(class_id):
