@@ -1,160 +1,234 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
-<head>
-  <title></title>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="pragma" content="no-cache"/>
-  <meta http-equiv="cache-control" content="no-cache"/>
-  <meta http-equiv="expires" content="0"/>
-  <meta http-equiv="content-style-type" content="text/css"/>
-  <meta http-equiv="content-script-type" content="text/javascript"/>
-  <script>
-      window.$BG_LANG='zh';
-  </script>
-  <script type="text/javascript" src="/eams/static/scripts/jquery/jquery,jquery.ui.core.js?bg=3.4.3"></script>
-  <script type="text/javascript" src="/eams/static/scripts/plugins/jquery-form,jquery-history,jquery-colorbox,jquery-chosen.js?bg=3.4.3"></script>
-  <script type="text/javascript" src="/eams/static/js/plugins/jquery.subscribe,/js/struts2/jquery.struts2,jquery.ui.struts2.js?bg=3.4.3"></script>
-  <script type="text/javascript" src="/eams/static/scripts/beangle/beangle,beangle-ui.js?bg=3.4.3"></script>
-
-  <script type="text/javascript">var App = {contextPath:"/eams"};jQuery(document).ready(function () {jQuery.struts2_jquery.version="3.6.1";beangle.contextPath=App.contextPath;jQuery.scriptPath = App.contextPath+"/static/";jQuery.struts2_jquerySuffix = "";jQuery.ajaxSettings.traditional = true;jQuery.ajaxSetup ({cache: false});});</script>
-  <script type="text/javascript" src="/eams/static/scripts/my97/WdatePicker-4.72.js?compress=no"></script>
-  <script type="text/javascript" src="/eams/static/scripts/highcharts.js"></script>
- 
-  <link id="jquery_theme_link" rel="stylesheet" href="/eams/static/themes/smoothness/jquery-ui.css?s2j=3.6.1" type="text/css"/>
-  <link id="beangle_theme_link" href="/eams/static/themes/default/beangle-ui,colorbox,chosen.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="/eams/static/css/foundation.css" type="text/css"/>
-
-	<script src="/eams/static/scripts/require.config.js?v=3"></script>
-	<script>
-	require.baseUrl="/eams/static/scripts";
-	</script>
-	<script src="/eams/static/scripts/require.js"></script>
-	<script type="text/javascript" src="/eams/static/scripts/require.js"></script>
-	
-	<!-- backbone & underscore -- fontend MVC framework -->
-	<script type="text/javascript" src="/eams/static/scripts/underscore.min.js"></script>
-	<script type="text/javascript" src="/eams/static/scripts/backbone.min.js"></script>
-	<script type="text/javascript" src="/eams/static/scripts/underscore.string.min.js"></script>
-	<script>
-	require(['underscore.string'], function(_s) {
-	        _.str = _s;
-	        _.mixin(_.str.exports());
-	});
-	</script>
-	
-
-</head>
-<body>
-
- 
-<div class="grid">
-
-
-<table id="grid2056112801" class="gridtable">
-<thead class="gridhead">
-
-
-<tr>
-<th  width="10%" >课程序号</th>
-<th  width="23%" >课程名称</th>
-<th  width="8%" >考试类别</th>
-<th  width="11%" >考试日期</th>
-<th  width="13%" >考试安排</th>
-<th  width="8%" >考试地点</th>
-<th  width="8%" >考场座位号</th>
-<th  width="8%" >考试情况</th>
-<th  width="8%" >其它说明</th>
-</tr>
-
-</thead>
-
-<tbody id="grid2056112801_data"><tr><td>001031100091.01</td><td>高等数学</td><td>期末考试</td>		<td>2018-01-11</td>
-		<td>08:30~10:30</td>
-		<td><a href="/eams/stdExamTable!downloadExamroomSeat.action?examRoom.id=3683" target="_blank">奉贤4教楼A519</a></td>
-<td></td><td>正常</td>		<td></td>
-</tr><tr><td>001031100131.05</td><td>中国近现代史纲要			 <sup style="color:#333fff;">思政类课</sup>
-</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">地点未安排</font></td>
-<td></td><td>正常</td>		<td></td>
-</tr><tr><td>001031100541.13</td><td>通用学术英语1级</td><td>期末考试</td>		<td>2018-01-10</td>
-		<td>08:30~10:30</td>
-		<td><a href="/eams/stdExamTable!downloadExamroomSeat.action?examRoom.id=3114" target="_blank">奉贤4教楼A119</a></td>
-<td></td><td>正常</td>		<td></td>
-</tr><tr><td>001031100601.09</td><td>马克思主义基本原理			 <sup style="color:#333fff;">思政类课</sup>
-</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">地点未安排</font></td>
-<td></td><td>正常</td>		<td></td>
-</tr><tr><td>001031100621.05</td><td>思想道德修养与法律基础			 <sup style="color:#333fff;">思政类课</sup>
-</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">地点未安排</font></td>
-<td></td><td>正常</td>		<td></td>
-</tr><tr><td>001031100881.A0</td><td>体育1			 <sup style="color:#333fff;">排球</sup>
-</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">地点未安排</font></td>
-<td></td><td>正常</td>		<td></td>
-</tr><tr><td>001031101441.01</td><td>程序设计与VBA应用			 <sup style="color:#333fff;">计算机应用基础</sup>
-</td><td>期末考试</td>		<td>2018-01-08</td>
-		<td>10:00~11:00</td>
-		<td><a href="/eams/stdExamTable!downloadExamroomSeat.action?examRoom.id=2698" target="_blank">奉贤5教楼D207</a></td>
-<td></td><td>正常</td>		<td></td>
-</tr><tr><td>001031101671.08</td><td>形势与政策（理论）</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">地点未安排</font></td>
-<td></td><td>正常</td>		<td></td>
-</tr><tr><td>002031105631.02</td><td>趣味植物与常见植物</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">地点未安排</font></td>
-<td></td><td>正常</td>		<td></td>
-</tr><tr><td>120131100691.02</td><td>土木工程制图与CAD</td><td>期末考试</td>		<td>2018-01-15</td>
-		<td>08:30~10:30</td>
-		<td><a href="/eams/stdExamTable!downloadExamroomSeat.action?examRoom.id=3937" target="_blank">奉贤2教楼202B</a></td>
-<td></td><td>正常</td>		<td></td>
-</tr><tr><td>120131100921.02</td><td>土木工程CAD上机</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">地点未安排</font></td>
-<td></td><td>正常</td>		<td></td>
-</tr><tr><td>120131101381.01</td><td>建筑力学实验</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">地点未安排</font></td>
-<td></td><td>正常</td>		<td></td>
-</tr><tr><td>120131101401.01</td><td>建筑力学</td><td>期末考试</td>		<td>2018-01-11</td>
-		<td>13:30~15:30</td>
-		<td><a href="/eams/stdExamTable!downloadExamroomSeat.action?examRoom.id=3921" target="_blank">奉贤2教楼202B</a></td>
-<td></td><td>正常</td>		<td></td>
-</tr><tr><td>120131101491.01</td><td>工程管理概论</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">地点未安排</font></td>
-<td></td><td>正常</td>		<td></td>
-</tr><tr><td>120131102441.01</td><td>工程管理概论课程实习</td><td>期末考试</td>		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">时间未安排</font></td>
-		<td><font color="BBC4C3">地点未安排</font></td>
-<td></td><td>正常</td>		<td></td>
-</tr></tbody>
-</table>
-</div>
-<script type="text/javascript">
-  var clearCheckbox_grid2056112801 = function() {
-    jQuery("#grid2056112801").find(".box:checkbox").removeProp("checked");
-    jQuery("#grid2056112801").find(".gridselect-top :checkbox").removeProp("checked");
-    return true;
-  }
-  
-  page_grid2056112801 = bg.page("/eams/stdExamTable!examTable.action","");
-  {
-    var _paramstring = 'examBatch.id=201';
-    var _params = _paramstring.split('&');
-    for (var i = 0; i < _params.length; i++) {
-      _params[i] = decodeURIComponent(_params[i]);
-    }
-    _paramstring = _params.join('&');
-    page_grid2056112801.target("",'grid2056112801').action("/eams/stdExamTable!examTable.action").addParams(_paramstring).orderBy("null");
-  }
-  bg.ui.grid.init('grid2056112801',page_grid2056112801);
-</script>
-</body>
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="" />
+    <meta name="decription" content="" />
+    <title>上海师范大学</title>
+    <link href="/cas/neusoft/comm/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/cas/js/jquery-1.10.2-min.js"></script>
+    <script type="text/javascript" src="/cas/js/jquery-placeholder.js"></script>
+</head>
+<body class="login_bg_f">
+	<div class="header_01 header_shadow_login">
+		<div class="header_02_space">
+			<a href="http://my.shnu.edu.cn" class="header_01_logo">
+				<img src="/cas/neusoft/comm/image/logo_default.png" onerror="this.src='/cas/neusoft/comm/image/logo_default.png'"/>
+			</a>
+			<div class="loginpage_head_line"></div>
+			<a href="http://my.shnu.edu.cn">
+				<font class="loginpage_head_txt">统一身份认证平台</font>
+			</a>
+			<!--  
+			<p class="header_01_help"><a href="http://my.shnu.edu.cn" target="_blank">使用帮助</a></p>
+			<p class="header_01_mobile"><a href="http://my.shnu.edu.cn" target="_blank">上海师范大学手机版</a></p>
+			-->
+			
+			<div class="">
+					<font class="loginpage_head_txt_01">建议浏览器：</font>
+					<p class="header_01_brower"><a target="_blank" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie">IE10+</a></p>
+					<p class="header_02_brower"><a target="_blank" href="http://www.firefox.com.cn/download/">火狐</a></p>
+					<p class="header_03_brower"><a target="_blank" href="http://rj.baidu.com/soft/detail/14744.html?ald">谷歌</a></p>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript" src="neusoft/manager/js/md5.js"></script>
+<script type="text/javascript">
+  	
+  	function submitInfo(){
+  		var _username = $("#username").val() ;
+  		var _password = $("#password_text").val() ;
+  		var _code = $("#code").val() ;
+  		var _type = $("#type").val();
+  		var _phoneCode = $("#phoneCode").val();
+  		var msg = $("#msg");
+  		
+  		var error_message_show = $("#error_message_show");
+  		if(_username==null || _username==''){
+  			error_message_show.html("用户名不能为空。");
+  			$("#username").focus();
+  			error_message_show.show();
+  			msg.hide();
+  		}else if(_type==1 && (_password==null || _password=='')){
+  			error_message_show.html("密码不能为空。");
+  			$("#password_text").focus();
+  			error_message_show.show();
+  			msg.hide();
+  		}else if(_type==2 && (_phoneCode==null || _phoneCode=='')){
+  			error_message_show.html("动态码不能为空。");
+  			$("#_phoneCode").focus();
+  			error_message_show.show();
+  			msg.hide();
+  		}else if(_code==null || _code==''){
+  			error_message_show.html("验证码不能为空");
+  			$("#code").focus();
+  			error_message_show.show();
+  			msg.hide();
+  		}else{
+		
+   		$("#password").val(_password);
+   		
+   		document.getElementById("fm1").submit();
+  		}
+  	}
+  	
+  	$(function(){
+  		//$("#username").focus();
+  		//键盘按键的监听
+	    $("#fm1 input").keydown(function(){
+	  		$("#msg").hide();
+	  		$("#error_message_show").hide();
+	    }).keyup(function(e) {
+		    // 回车键事件
+		    if(e.which == 13) {
+		   		submitInfo();
+		    }
+   	   });
+   	   //点击密码登录
+   	   $("#a_pwd").click(function(){
+   	   		$("#password_text").show();
+   	   		$("#div_phoneCode").hide();
+   	   		$("#type").val(1);
+   	   		$(this).addClass('checked');
+   	   		$("#a_code").removeClass('checked');
+   	   });
+   	   //点击动态码登录
+   	   $("#a_code").click(function(){
+   	   		$("#password_text").hide();
+   	   		$("#div_phoneCode").show();
+   	   		$("#type").val(2);
+   	   		$(this).addClass('checked');
+   	   		$("#a_pwd").removeClass('checked');
+   	   });
+   	   //点击获取动态码
+   	   $("#getPhoneCode").click(function(){
+   	   		$("#msg").hide();
+   	   		var username = $.trim($("#username").val()) ;
+   	   		if(username==''){
+   	   			$("#error_message_show").html("请先输入手机号。").show();
+   	   		}else{
+   	   			//发送手机动态码
+   	   			$.post("/cas/ad?action=sendPhoneCode",{mobile:username},function(data){
+   	   					if(data && data.success){
+   	   						$("#error_message_show").html("动态码已发出，有效期为5分钟。").show();
+   	   						$('#getPhoneCode').hide();
+				   	   		$('#timeShow').show();
+				   	   		var time=301;
+				   	   		var interval = setInterval(function(){
+	   	   							$('#timeShow').text(--time);
+	   	   							if(time==0){
+	   	   								clearInterval(interval);
+	   	   								$('#getPhoneCode').show();
+	   	   								$('#timeShow').hide();
+	   	   							}
+	   	   						},1000);
+   	   					}else{
+   	   						$("#error_message_show").html("该号码尚未与您的账号进行绑定。").show();
+   	   					}
+   	   			},"json");
+   	   		}
+   	   });
+   	   
+   	   //登录失败后切换到原始状态
+   	   
+  	});
+ </script>
+
+
+<div class="mid_container">
+	<div class="mid_container_content" style="background: url(neusoft/comm/image/background_1464968076533.jpg) scroll no-repeat center transparent;" >
+		<div class="mid_c_c_shadow">
+			<div class="container_space">
+				<div class="content_login_box">
+					<div class="login_box_up">
+						<form id="fm1" action="/cas/login?service=http%3A%2F%2Fcourse.shnu.edu.cn%2Feams%2Flogin.action" method="post" onsubmit="return false;">
+								
+											<div class="login_tab">
+												<a id="a_pwd" href="javascript:;" class="checked" style="width:163px;">用户名密码登录</a>
+												<a id="a_code" href="javascript:;" class="border_right_none" style="width:131px;">动态码登录</a>
+											</div>
+										    <!-- 在线用户量尚未超过配置的最大值 -->
+											<div class="login_box_title">
+											
+												<!--  <span class="login_box_title_name">用户登录</span>-->
+												<span class="login_box_title_notice script_red" id="error_message_show" ></span>
+												
+											</div>
+											
+			   								<input id="username" name="username" class="login_box_input" tabindex="1" placeholder="用户名/手机号" type="text" value="" size="25" autocomplete="off"/>
+			   
+											<input type="password" class="login_box_input" id="password_text" size="25" tabindex="2" placeholder="密码"/>
+											<input type="hidden" id="password" name="password"/>	
+											
+											<div id="div_phoneCode" style="display:none;">
+											<input type="text" id="phoneCode" name="phoneCode" class="login_box_input" tabindex="3" placeholder="动态码" style="width:140px;"/>
+											<a href="javascript:;" style="float:left;margin:20px 0 0 10px;" id="getPhoneCode">获取动态码</a>
+											<span id="timeShow" style="float:left;margin:20px 0 0 10px;display:none;" ></span>
+			    							</div>
+			    							
+											<div class="down_link_choice">
+												<input id="rememberMe" name="rememberMe" tabindex="4" type="checkbox" class="login_box_checkbox"/>
+												<span class="login_box_checkbox_label">下次自动登录</span>
+												 <!-- <span class="login_box_sepline">|</span>
+												 <a href="pwd" class="login_box_psd">密码找回</a> -->
+												
+												<!-- 是否开启QQ的OAuth认证 -->
+												
+											</div>
+											  
+										      <input class="required" type="hidden" tabindex="3" id="code" name="code" value="code"/>
+										      
+											<input type="hidden" name="type" value="1" id="type"/>
+											<input type="hidden" name="lt" value="LT-222804-wr7GiPiL32deqHVCMUBc0tWjgH2C7L-cas" />
+									        <input type="hidden" name="execution" value="e2s1" />
+									        <input type="hidden" name="_eventId" value="submit" />
+											<span class="landing_btn_bg">
+												<input class="login_box_landing_btn" type="button" onclick="javascript:submitInfo();"/>
+											</span>
+								
+							</form>
+					</div>
+					<!-- div class="login_box_down">
+						<p class="login_box_notice">
+							<font class="graybold">温馨提示：</font> _
+						</p>
+					</div -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+	<div style="visibility: visible;" id="footer">
+		<div class="widget-content" id="footer-content">
+			<div class="left">上海师范大学 | 东软集团股份有限公司 Copyright © 2018</div>
+			<div class="right">
+				<span>技术支持：信息化办公室，联系：64321010或 itoffice@shnu.edu.cn</span>
+			</div>
+		</div>
+	</div>
+  </body>
 </html>

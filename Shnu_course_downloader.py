@@ -128,7 +128,7 @@ page_for_timer = int(int(content_length) / int(content_per_page))
 time.sleep(1)
 
 
-for i in range(44, 45):
+for i in range(1, page_for_timer):
     print i
 
 
@@ -138,7 +138,7 @@ for i in range(44, 45):
 
     webText = response.read()
 
-    print webText
+    # print webText
 
     web_soup = BeautifulSoup(webText, 'lxml')
 
@@ -181,5 +181,5 @@ for i in range(44, 45):
 
     file_object.close()
 
-    time.sleep(0.5)
+    time.sleep(1)
 
