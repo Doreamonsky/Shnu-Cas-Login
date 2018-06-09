@@ -57,7 +57,7 @@ JSESSIONID = ''  # 打开cas后分配的
 # Cookies
 my_cookies = cookielib.CookieJar()
 
-my_cookies.set_cookie(make_cookie('semester.id', '142;'))
+my_cookies.set_cookie(make_cookie('semester.id', '162;'))
 cookie_pr = urllib2.HTTPCookieProcessor(my_cookies)
 url_opener = urllib2.build_opener(cookie_pr)
 
@@ -128,7 +128,7 @@ page_for_timer = int(int(content_length) / int(content_per_page))
 time.sleep(1)
 
 
-for i in range(44, 45):
+for i in range(1, page_for_timer):
     print i
 
 
@@ -151,7 +151,7 @@ for i in range(44, 45):
 
     data_list = []
 
-    file_object = open('data/semester201702/course_page{0}.txt'.format(i), 'w')
+    file_object = open('data/semester201801/course_page{0}.txt'.format(i), 'w')
 
     for idx, tr in enumerate(web_soup.find_all('tr')):
         if idx != 0:

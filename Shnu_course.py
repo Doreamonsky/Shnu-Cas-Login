@@ -6,8 +6,7 @@ import re
 import os
 import json
 
-
-folder = 'semester201702'
+folder = 'semester201801'
 
 
 # 课程教室地点数据
