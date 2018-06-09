@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 import os
 
-folder = 'semester201702'
+folder = 'semester201801'
 
 i = 1
 

@@ -109,7 +109,7 @@ for cookie in my_cookies:
 
 # Cas
 
-course_url = "http://course.shnu.edu.cn/eams/stdSyllabus!search.action?lesson.project.id=1&lesson.semester.id=142"
+course_url = "http://course.shnu.edu.cn/eams/stdSyllabus!search.action?lesson.project.id=1&lesson.semester.id=162"
 
 value = {"pageNo": 1}
 
