@@ -57,7 +57,7 @@ JSESSIONID = ''  # 打开cas后分配的
 # Cookies
 my_cookies = cookielib.CookieJar()
 
-my_cookies.set_cookie(make_cookie('semester.id', '162;'))
+my_cookies.set_cookie(make_cookie('semester.id', '182;'))
 cookie_pr = urllib2.HTTPCookieProcessor(my_cookies)
 url_opener = urllib2.build_opener(cookie_pr)
 
@@ -109,7 +109,7 @@ for cookie in my_cookies:
 
 # Cas
 
-course_url = "http://course.shnu.edu.cn/eams/stdSyllabus!search.action?lesson.project.id=1&lesson.semester.id=162"
+course_url = "http://course.shnu.edu.cn/eams/stdSyllabus!search.action?lesson.project.id=1&lesson.semester.id=182"
 
 value = {"pageNo": 1}
 
@@ -157,7 +157,7 @@ for i in range(1, page_for_timer):
 
     data_list = []
 
-    file_object = open('data/semester201801/course_page{0}.txt'.format(i), 'w')
+    file_object = open('data/semester201901/course_page{0}.txt'.format(i), 'w')
 
     for idx, tr in enumerate(web_soup.find_all('tr')):
         if idx != 0:
